@@ -541,17 +541,17 @@ Do the following:
 3. Create a new terminal by pressing the `+` button
 4. Copy one of the private keys from the anvil terminal
 5. Run `forge create SimpleStorage --interactive`
-   We don't need to specify an `--rpc-url` this time because forge defaults to Anvil's RPC URL.
+	We don't need to specify an `--rpc-url` this time because forge defaults to Anvil's RPC URL.
 6. Go to the Anvil terminal and check the deployment details:
 
 ```Solidity
-    Transaction: 0x40d2ca8f0d680f098c7d5e3c127ef1ce1207ef439ba6e163c2042483e15998a6
-    Contract created: 0x5fbdb2315678afecb367f032d93f642f64180aa3
-    Gas used: 357076
+	Transaction: 0x40d2ca8f0d680f098c7d5e3c127ef1ce1207ef439ba6e163c2042483e15998a6
+	Contract created: 0x5fbdb2315678afecb367f032d93f642f64180aa3
+	Gas used: 357076
 
-    Block Number: 1
-    Block Hash: 0x85a56c0b8f166e86d1cce65412615e0d9a72972e04b2488023275131ea27330a
-    Block Time: "Mon, 15 Apr 2024 11:50:55 +0000"
+	Block Number: 1
+	Block Hash: 0x85a56c0b8f166e86d1cce65412615e0d9a72972e04b2488023275131ea27330a
+	Block Time: "Mon, 15 Apr 2024 11:50:55 +0000"
 
 ```
 
@@ -563,9 +563,34 @@ forge create SimpleStorage --rpc-url http://127.0.0.1:8545 --private-key 0xac097
 
 We included the `--rpc-url` to not count on the default and the `--private-key` to not use the `--interactive` option anymore.
 
-Pfew! That was a lot, but we learned a very important thing, how to deploy a smart contract on two local blockchains. But what comes next is one of the most important if not the _**MOST IMPORTANT**_ aspects you will learn here: _**Private key safety**_
+We learned a very important thing, how to deploy a smart contract on two local blockchains. But what comes next is one of the most important if not the _**MOST IMPORTANT**_ aspects you will learn here: _**Private key safety**_
+
+## Private key safety
+
+Having a private key in plain text is extremely bad. The private key(s) we used in the last lesson are well-known keys for local testing, you shouldn't use those on mainnet and keeping them in plain text is ok, but any other private key should be kept hidden, especially your production key or key's associated with accounts that hold crypto.
+
+Moreover, it's very bad to have private keys in bash history (hit the up arrow and see the key you used to deploy).
+
+You can delete your history by typing:
+
+```Solidity
+history -c
+```
+
+We will teach you more about how to secure private keys in one of the next lessons.
 
 
+Hacking private keys is one of the most important reasons people and projects lose absurd amounts. You don't even need to look that deep to find titles like this:
+
+[The Ronin hack](https://www.halborn.com/blog/post/explained-the-ronin-hack-march-2022) - Social engineering of private keys
+
+[Early Crypto Investor Bo Shen Says He Lost \$42 Million in Wallet Hack](https://www.bnnbloomberg.ca/early-crypto-investor-bo-shen-says-he-lost-42-million-in-wallet-hack-1.1850446)
+
+[The \$477 million FTX hack](https://www.elliptic.co/blog/the-477-million-ftx-hack-following-the-blockchain-trail) where `The new CEO of FTX revealed that private keys allowing access to the firm’s crypto assets were stored in unencrypted form, and a former employee disclosed that over $150 million was stolen from Alameda Research, due to poor security. `&#x20;
+
+Don't be like that! Maybe you are not holding millions, but what you hold is yours, don't let it become theirs!
+
+In the following lessons, we'll learn how to access RPC URLs for free using Alchemy for any blockchain. We will also delve into exploring safer methodologies for dealing with private keys. Stay tuned!
 
 # others
 <!-- 
