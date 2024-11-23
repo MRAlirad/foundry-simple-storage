@@ -773,7 +773,7 @@ Awesome!
 
 Through this lesson we kept talking about a thing called `transaction`, but what is a `transaction`? Tune in the next lesson to find out.
 
-### More about blockchain transactions
+## More about blockchain transactions
 
 In the previous lesson we kept talking about transactions, but we never explained what a transaction is. In simple terms, a transaction captures details of an activity that has taken place on a blockchain.
 
@@ -822,6 +822,13 @@ Whenever we send a transaction over the blockchain there's a signature happening
 
 **Important:** Every time you change the state of the blockchain you do it using a transaction. The thing that indicates the change is the `data` field of a transaction. Deployment bytecode, contract bytecode and OPCODEs will be tackled in a future lesson.
 
+## Private key safety - pt2
+
+## Never use a Env file
+
+## Interacting with a smart contract using the CLI
+
+## Deploying a smart contract on testnet (Sepolia)
 
 # others
 <!-- 
