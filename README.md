@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to Foundry 101. Throughout this course, you will acquire the skills you’ll need to start developing your smart contracts and protocols using the best web3 development tools and frameworks like _**Chainlink**_, _**Alchemy**_, and _**Foundry**_.
+Throughout this course, you will acquire the skills you’ll need to start developing your smart contracts and protocols using the best web3 development tools and frameworks like _**Chainlink**_, _**Alchemy**_, and _**Foundry**_.
 
 ### What is Foundry?
 
@@ -12,127 +12,15 @@ Foundry is a relatively new but rapidly growing smart contract development frame
 Foundry manages your dependencies, compiles your project, runs tests, deploys, and lets you interact with the chain from the command-line and via Solidity scripts.
 ```
 
-Please take a moment to bookmark the [Foundry Book](https://book.getfoundry.sh/). It is the most comprehensive resource that has the answers to all your questions. It will be handy along the way.
-
 Foundry has numerous pros, such as:
 
 -   It **leverages Rust** for compilation, offering significantly faster build times compared to frameworks like Hardhat or Brownie.
 -   It's entirely **Solidity-based**, eliminating the need to learn other programming languages
 -   Its **documentation is comprehensive**.
 
-## Development environment setup (Windows)
 
-Download VS Code from [here](https://code.visualstudio.com/).
-
-The setup is straightforward.
-If this is your first time using VS Code spend some time and navigate through the "Get Started with VS Code" instructions. These valuable tips could clear many hurdles in your upcoming coding adventures. Moreover, to get an even better grasp on using VS Code, consider going through the [Visual Studio Code Crash Course](https://www.youtube.com/watch?v=WPqXP_kLzpo) from freeCodeCamp.
-
-### VS Code terminal
-
-VS Code has a built-in terminal emulator, often simply referred to as the VS Code terminal. It provides a command-line interface (CLI) environment directly within VS Code, allowing you to interact with your operating system and run various tools and utilities.
-
-You can open up multiple terminals at the same time running different shells ranging from bash, Powershell, WSL and many more depending on what you have configured.
-
-Use the `+` button to create a new terminal or the trash button to kill the current terminal.
-
-Whether you are learning **Foundry** for development work or security work, moving fast is one of the keys to efficiency. VS Code is very versatile in terms of keyboard shortcuts, you can learn more [here](https://code.visualstudio.com/docs/getstarted/keybindings).
-
-### What is WSL?
-
-**WSL** stands for **Windows Subsystem for Linux**. It's a feature introduced by Microsoft that allows you to run a Linux environment directly on your Windows machine. This means you can use familiar Linux command-line tools and applications alongside your existing Windows programs. To ensure that your code runs on various machines using Unix-based systems like Mac and Linux, you'll find WSL to be immensely beneficial.
-
-### How to install WSL?
-
-Installing WSL is very easy, just open your Windows Terminal (comes preinstalled in Windows 11, available on Microsoft Store on Windows 10) and type:
-
-```Solidity
-wsl --install
-```
-
-After your system reboots, the Terminal will open automatically and proceed with the installation.
-
-You will be asked to provide a new UNIX username and an associated password.
-
-### Making Visual Studio Code Compatible with WSL
-
-The next step is to ensure our VS Code is compatible with WSL.
-
-Open up VS Code and navigate to the Extensions tab. Here, look for the Remote Development extensions and proceed to install each of them. This will enable VS Code to operate with WSL seamlessly. A new icon will appear on the bottom left of the screen called `Open a Remote Window`.
-
-There's even an easier way to connect:
-
-1. In the Windows Terminal, open up a new Ubuntu terminal.
-2. Create a new folder by typing in:
-
-```Solidity
-mkdir solidity-course
-```
-
-1. Change the directory into the newly created folder
-
-```Solidity
-cd solidity-course/
-```
-
-1. Open VS Code inside the folder by typing in
-
-```Solidity
-code .
-```
-
-1. WIN! You just created a new instance of VS Code that uses WSL. Everything is correct if on the bottom left of your screen you see a small banner with the text `WSL Ubuntu`.
-
-**Important: When you conduct your projects from a folder inside Windows (ex. Development) inside your documents, it's crucial to know that the WSL console will only access local files inside the WSL instance. Therefore, it's recommended to keep files inside the WSL instance for faster communication and convenience.**
-
-### Git installation
-
-Whether you have it and it needs to be updated or you need to perform a fresh install the best way to approach this is by visiting the [Git Book](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and following the instructions there.
-
-Check your git installation calling
-
-```Solidity
-git --version
-```
-
-Amazing work! You're ready for the next lesson.
-
-## Develop in the cloud using Gitpod
-
-**BIG BOLDED DISCLAIMER: This is not the ideal way to develop smart contracts. While using Gitpod you should never share private information, like a key or a secret phrase. That's if you like to continue being the owner of the associated accounts.**
-
-Gitpod is an online platform that provides cloud-based, pre-configured development environments specifically designed for working with Git repositories. It's similar to Remix IDE, but it allows you to run VS Code in a browser, on a remote server.
-
-Go to [Gitpod's website](https://gitpod.io/login/) and click `Continue with Github`. After that, you'll be able to create a new workspace, starting from a Github repository, using a stable version of VS Code.
-
-You'll be amazed to find out it looks exactly like VS Code. There's also an option to open Gitpod into your VS Code desktop version.
-
-Everything works like in VS Code and thus you should be able to run anything using the same commands.
-
-Gitpod has some [fantastic resources](https://www.gitpod.io/docs/introduction/getting-started) to get you started.
-
-## Foundry Setup
-
-Welcome to this handy guide on installing and operating Foundry, a versatile tool that will add a new level of command-line ease to your developer journey. Whether you're running Windows, Linux or MacOS, we've got you covered with instructions and tips. So sit back, grab a cup of coffee, and let's dive in.
-
-## Prepping your Terminal
-
-First things first. Before we dive into installing Foundry, make sure you have your terminal set up correctly.
-
-If you are using Windows, you should see something like `WSL` or `Ubuntu`. Once you have your terminal environment ready, it’s time for some quick tips to help streamline your workflow.
-
-### Keeping your Terminal Clutter-free
-
-When commands pile up in your terminal, things can get a little overwhelming. Clear it up by simply typing `clear` and hitting `Enter`. Alternatively, use `Command K` if you're on a Mac or `Control K` if you're on Linux or Windows.
-
-**Pro tip:** This is one of my favorite keyboard shortcuts that I use all the time.
-
-### Understanding the Trash Can and the X
-
-The trash can and the X buttons in your terminal perform distinct functions. Hitting `X` simply hides your terminal but retains all the previous lines of code. On the other hand, trashing it essentially deletes whatever is running in it. To open up a clean terminal, hit the trash can and then pull it back using `Toggle` or `Terminal > New Terminal`.
-
-## Installing Foundry
-
-With our terminal set and some tips up our sleeve, let's progress to installing Foundry. Navigate to the [Foundry website](https://book.getfoundry.sh/getting-started/installation) and from the installation tab, fetch the command to install Foundry.
+## Foundry Setup Installation
+Navigate to the [Foundry website](https://book.getfoundry.sh/getting-started/installation) and from the installation tab, fetch the command to install Foundry.
 
 The command would look something like this:
 
@@ -140,11 +28,7 @@ The command would look something like this:
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
-Hit `Enter` after pasting this in your terminal.
-
-**Note:** You must have Internet access for this to work as it's downloading Foundry from their official website.
-
-## Verifying Your Installation
+### Verifying Your Installation
 
 After running the `curl` command, an output will appear at the bottom of your terminal indicating the detected shell and the fact that Foundry has been added to your `Path`.
 
@@ -163,15 +47,7 @@ This will install four components: forge, cast, anvil, and chisel. To confirm th
 Forge version x.x.x
 ```
 
-Now, here's something to remember: when you hit the trash can in the top right, it literally 'removes' the terminal. The X button, in contrast, simply hides it.
-
-### Is Foundry Up Not Running?
-
-Don't panic if this command doesn't run. You might have an issue with your path, and you might need to add Foundry to your path. In case you run into this issue, check lesson 6 of the GitHub repo associated with this course. If no debugging tips are available there, feel free to start a discussion on the course's GitHub repo. Before doing so, make sure to check if a similar discussion already exists.
-
-Try typing `forge --version` into your terminal. Have you received an unwelcome output saying `Forge command found`? This implies that you have to rerun the `source` command that Foundry offered during installation.
-
-Note: Most of the time the `bashrc` file gets loaded automatically. However, if this doesn't apply to your setup, the following lines can add the required command to the end of your `Bash profile`. This will ensure that your `bashrc` file loads by default.
+Most of the time the `bashrc` file gets loaded automatically. However, if this doesn't apply to your setup, the following lines can add the required command to the end of your `Bash profile`. This will ensure that your `bashrc` file loads by default.
 
 ```bash
 cd ~
@@ -180,121 +56,13 @@ echo 'source /home/user/.bashrc' >> ~/.bash_profile
 
 > this depends on your operating system, please check foundry docs to see detailed instructions.
 
-## Wrapping Up
-
-And there we have it! Congratulations on installing Foundry and prepping your terminal to work seamlessly with it. Remember, hitting snags during installation is normal, especially if you're new to this. Don't hesitate to engage with the course community via GitHub if you run into issues.
-
-## VS Code setup
-
-### Installing VS Code extensions
-
-1. Open the Extensions view:
-
-There are two ways to do this:
-
-Click the Extensions icon in the Activity Bar on the left side of VS Code.
-
-Use the shortcut Ctrl+Shift+X (Windows/Linux) or Cmd+Shift+X (Mac).
-
-1. Browse or search for extensions:
-
-The Extensions view displays featured extensions by default.
-
-Use the search bar to find a specific extension by name.
-
-1. Install the extension:
-
-Once you've found the extension you want, click the "Install" button.
-VS Code will handle the download and installation process.
-
-**That's it! The extension should be ready to use within VS Code.**
-
-### Integrating AI into our work
-
-One of the best extensions that integrates AI in our development is GitHub Copilot
-
-Although it's a premium service, its intuitive AI-powered code autocomplete feature could be a game-changer for you. Of course, you can choose to go with other AI extensions based on your preferences.
-
-You can download GitHub Copilot [here](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot). More details and answers for your GitHub Copilot-related questions are available [here](https://github.com/features/copilot/?editor=vscode#faq).
-
-### Other important VS Code Tips
-
-**_Beware the white dot_**, if you see it, your work is not saved, which means your project won't behave the way you want it to behave.
-
-`` CTRL(CMD) + `  `` opens/closes your terminal. It's the equivalent of pressing the `X` button on the top right part of your terminal.
-
-The `trash can` button, on the left side of the `X` button destroys the terminal, make sure you always remember the difference between these two buttons.
-
-Hooray! This concludes the setup part of this course. Now we get to the fun part, actually developing a project using solidity and foundry.
-
-### More setup ...
-
-Run the following commands in your terminal:
-
-```Solidity
-mkdir foundry-f23
-cd foundry-f23
-```
-
-`mkdir` creates a directory or subdirectory.
-`cd` changes the directory.
-
-Moving forward, it's advisable to keep all your repositories in this folder. Thus, you'll always have a place to reference all your code.
-
 ## Create a new Foundry Project
-
-Make sure we are in the folder we created in the previous lesson.
-
-**Reminder**: We ran the following commands
-
-```Solidity
-mkdir foundry-f23
-cd foundry-f23
-```
-
-Now type the following commands:
-
-```Solidity
-mkdir foundry-simple-storage-f23
-cd foundry-simple-storage-f23
-```
-
-You can always make the `cd` command faster by pressing the `Tab` key after you type the first couple of letters from the destination name. `Tab` lets you autocomplete a lot of commands/paths.
-
-If you type `code .` a new instance of VS Code will open, having the `foundry-simple-storage-f23` as the default path.
-
-You can see the contents of this folder on the left sidebar. Try the following command:
-
-```Solidity
-touch randomFile.txt
-```
-
-This will create a `randomFile.txt`
-
-If you want to delete it type:
-
-```Solidity
-rm randomFile.txt
-```
-
-The terminal is pretty slick when it comes to moving/opening/creating directories/files, changing paths and generally running things. I recommend going through [this tutorial](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) if you want to learn how to move extra fast.
-
-### Creating a New Project
 
 The way you [create a new Foundry project](https://book.getfoundry.sh/projects/creating-a-new-project) is by running the `forge init` command. This will create a new Foundry project in your current working directory.
 
 If you want Foundry to create the new project in a new folder type `forge init nameOfNewFolder`.
 
 Keep in mind that by default `forge init` expects an empty folder. If your folder is not empty you must run `forge init --force .`
-
-Be sure to configure your username and email if you encounter errors related to Git configuration.
-
-```Solidity
-git config --global user.email "yourEmail@provider.com"
-git config --global user.name "yourUsername"
-```
-
-And that's it, your folder should look as follows:
 
 <img src='./images/create-first-project/Image1.png' alt='Image1' />
 
@@ -314,11 +82,7 @@ And that's it, your folder should look as follows:
 
 `foundry.toml` - gives configuration parameters for Foundry
 
-More on these folders and files later.
-
-Please right-click `src`, click on `New File` and name it `SimpleStorage.sol`. Copy the code available [here](https://github.com/Cyfrin/foundry-simple-storage-f23/blob/main/src/SimpleStorage.sol).
-
-One last thing, please delete `Counter.s.sol`, `Counter.sol` and `Counter.t.sol`. These files are a set of basic smart contracts that Foundry provides as a default when you create a new Foundry project.
+Create new file named `SimpleStorage.sol` in the `src` folder and copy the code of `SimpleStorage` in it
 
 ## Improving Code Format in Visual Studio Code
 
@@ -385,20 +149,6 @@ Once the compiling is finished, you'll see some new folders in the Explorer tab 
 
 The `cache` folder also appears. Generally, this folder is used to store temporary system files facilitating the compilation process. But for this course, you can safely ignore it.
 
-### More terminal wizardry
-
-Throughout your solidity development/audit journey you will type a lot of terminal commands, every time to make a change that you want tested you'll probably have to rerun the `forge build` then maybe you test it with `forge test` or run a script with `forge script` and many more. Typing all these over and over again is inefficient and time-consuming. The better way is to use the `up` and `down` arrow keys. Type the following commands:
-
-```Solidity
-echo "I like Foundry"
-echo "I love Cyfrin"
-echo "Auditing is great"
-```
-
-Now press the `up` and `down` arrow keys to cycle through the 3 commands.
-
-Ok, cool! We learned how to compile a contract, but how does one deploy a smart contract?
-
 ## Deploy a smart contract locally using Anvil
 
 There are multiple ways and multiple places where you could deploy a smart contract.
@@ -417,8 +167,6 @@ This testnet node always listens on `127.0.0.1:8545` this will be our `RPC_URL` 
 
 More info about Anvil is available [here](https://book.getfoundry.sh/reference/anvil/).
 
-Please press `Ctrl/CMD + C` to close Anvil.
-
 Anvil will be used throughout the course to deploy and test our smart contracts, but before that, let's quickly check an intermediary step.
 
 ### Ganache
@@ -428,8 +176,6 @@ _Ganache is a glaze, icing, sauce, or filling for pastries usually made by heati
 Wait, not that ganache! The other ganache:
 
 Ganache is a personal blockchain for rapid Ethereum and Filecoin distributed application development. You can use Ganache across the entire development cycle; enabling you to develop, deploy, and test your dApps in a safe and deterministic environment.
-
-Better!
 
 Please download Ganache from [here](https://archive.trufflesuite.com/ganache/).
 
@@ -577,18 +323,13 @@ You can delete your history by typing:
 history -c
 ```
 
-We will teach you more about how to secure private keys in one of the next lessons.
-
-
 Hacking private keys is one of the most important reasons people and projects lose absurd amounts. You don't even need to look that deep to find titles like this:
 
 [The Ronin hack](https://www.halborn.com/blog/post/explained-the-ronin-hack-march-2022) - Social engineering of private keys
 
 [Early Crypto Investor Bo Shen Says He Lost \$42 Million in Wallet Hack](https://www.bnnbloomberg.ca/early-crypto-investor-bo-shen-says-he-lost-42-million-in-wallet-hack-1.1850446)
 
-[The \$477 million FTX hack](https://www.elliptic.co/blog/the-477-million-ftx-hack-following-the-blockchain-trail) where `The new CEO of FTX revealed that private keys allowing access to the firm’s crypto assets were stored in unencrypted form, and a former employee disclosed that over $150 million was stolen from Alameda Research, due to poor security. `&#x20;
-
-Don't be like that! Maybe you are not holding millions, but what you hold is yours, don't let it become theirs!
+[The \$477 million FTX hack](https://www.elliptic.co/blog/the-477-million-ftx-hack-following-the-blockchain-trail) where `The new CEO of FTX revealed that private keys allowing access to the firm’s crypto assets were stored in unencrypted form, and a former employee disclosed that over $150 million was stolen from Alameda Research, due to poor security. `;
 
 In the following lessons, we'll learn how to access RPC URLs for free using Alchemy for any blockchain. We will also delve into exploring safer methodologies for dealing with private keys. Stay tuned!
 
@@ -769,13 +510,7 @@ Switch to the `anvil` terminal where you'll see:
 	Block Time: "Tue, 16 Apr 2024 13:39:51 +0000"
 ```
 
-Awesome!
-
-Through this lesson we kept talking about a thing called `transaction`, but what is a `transaction`? Tune in the next lesson to find out.
-
 ## More about blockchain transactions
-
-In the previous lesson we kept talking about transactions, but we never explained what a transaction is. In simple terms, a transaction captures details of an activity that has taken place on a blockchain.
 
 On the left side of your screen, in the Explorer tab, you'll find a folder called `broadcast`. Foundry saves all your blockchain interactions here. The `dry-run` folder is used for interactions you made when you didn't have a blockchain running (remember that time when we deployed our contract without specifying an `--rpc-url`). Moreover, the recordings here are separated by `chainId`.
 
@@ -824,77 +559,173 @@ Whenever we send a transaction over the blockchain there's a signature happening
 
 ## Private key safety - pt2
 
+We deployed `SimpleStorage` using the following command:
+
+```Solidity
+forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+```
+
+Having our private key in plain text is very bad. What can we do to avoid this, except using the `--interactive` parameter, because we don't want to keep copy-pasting our private key?
+
+**BIG BOLDED DISCLAIMER: What we are about to do is fine for development purposes, do not put a real key here, it very terrible for production purposes.**
+
+Create a new file in the root of your project called `.env`. Then, go the `.gitignore` file and make sure `.env` is in there.
+
+The `.env` file will host environment variables. Variables that are of a sensitive nature that we don't want to expose in public.
+
+Open the file and put the following in it:
+
+```Solidity
+PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+RPC_URL=http://127.0.0.1:8545
+```
+
+Next run `source .env`. This adds the above-mentioned environment variables into our shell. Now run `echo $PRIVATE_KEY` or `echo $RPC_URL` to check if the values are stored in the shell.
+
+Now we can safely replace the parameters in our `forge script` command:
+
+```Solidity
+forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+```
+
+This doesn't only hide your private key from plain sight in the command line but also facilitates faster terminal usage, imagine you'd have to copy-paste the `http://127.0.0.1:8545` RPC URL over and over again. It's cleaner this way.
+
+But yes, now we have the private key in plain text in the `.env` file, that's not good.
+
+### How to handle this problem with production code?
+
+Foundry has a very nice option called `keystore`. To read more about it type `forge script --help` in your terminal. Using `forge script --keystore <PATH>` allows you to specify a path to an encrypted store file, encrypted by a password. Thus your private key would never be available in plain text.
+
+Let's agree to the following:
+
+1. For testing purposes use a `$PRIVATE_KEY` in an `.env` file as long as you don't expose that `.env` file anywhere.
+2. Where real money is involved use the `--interactive` option or a [keystore file protected by a password](https://github.com/Cyfrin/foundry-full-course-f23?tab=readme-ov-file#can-you-encrypt-a-private-key---a-keystore-in-foundry-yet).
+
+There's one more thing about storing keys in a `.env` file. Please take a look at the ["THE .ENV PLEDGE"](https://github.com/Cyfrin/foundry-full-course-f23/discussions/5). Read it, understand it and comment `I WILL BE SAFE`. Tweet it, Tiktok it, blog about it, make an Insta story about it, print it and put it on your fridge and share some copies with your neighbors. Please stay safe!
+
+
 ## Never use a Env file
+
+### Encrypting your Keys Using ERC2335
+
+For now, let's pretend our private key is this:
+
+`0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` (key 0 from Anvil)
+
+Type the following command in your terminal:
+
+```Solidity
+cast wallet import nameOfAccountGoesHere --interactive
+```
+
+Ideally, you don't do this in your VS Code.
+
+You will be asked for your private key and a password to secure it. You will do this only once, which is amazing!
+
+If you remember, last lesson we deployed running the following command:
+
+```Solidity
+forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+```
+
+Now that we configured our wallet we can deploy as following:
+
+```Solidity
+forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --account nameOfAccountGoesHere --sender 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+```
+
+You will be asked for your password. You won't be able to deploy without your password.
+
+To see all the configured wallets you can call the following: `cast wallet list`.
+
+Clear your history so your private key won't randomly remain there using the following command: `history -c`.
+
+***Stay safe! * Don't lose your keys. If you are seeing your private key in plain text, you are doing something wrong.***
+
 
 ## Interacting with a smart contract using the CLI
 
+Foundry has a built-in tool known as `Cast`. `Cast` comes loaded with numerous commands to interact with. Learn more about them by typing `cast --help`. One such useful command is `send` which is designed to sign and publish a transaction. To view help about `send`, type `cast send --help`.
+
+To use `send` we need a signature and some arguments.
+
+Please call the following in your terminal:
+
+**Note**: Down below use the address you copy-pasted from your terminal, there's a chance it will be different than the one mine was deployed.
+
+```Solidity
+cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 "store(uint256)" 1337 --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+```
+
+**What did we just do?**
+
+Let's break it down:
+
+* `cast send` is the command we used to sign and publish our transaction;
+* `0x5FbDB2315678afecb367f032d93F642f64180aa3` or any other address is the target of our `cast send`, the contract we are interacting with;
+* `"store(uint256)"` is the [signature of the function](https://ethereum.stackexchange.com/questions/135205/what-is-a-function-signature-and-function-selector-in-solidity-and-evm-language) we are calling.
+* `1337` is the number we pass to the `store` function. As we can see in the function signature, we are expected to provide an `uint256` input. You can obviously provide any number you want, as long as it fits `uint256`.
+* you already know what `--rpc-url $RPC_URL --private-key $PRIVATE_KEY` are. The place where we send and the private key we use to sign.
+
+### Reading information from the blockchain
+
+`cast` conveniently provides a way to read information stored on the blockchain. Type `cast call --help` in your terminal to find out more. It works similarly to `send`, where you have to provide a signature and some arguments. The difference is you are only peering into the storage, not modifying it.
+
+Call the following command in your terminal:
+
+```Solidity
+cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 "retrieve()"
+```
+
+We receive back the following:
+
+```Solidity
+0x0000000000000000000000000000000000000000000000000000000000000539
+```
+
+This represents a hex value. In the previous lessons, we learned how to convert this to a normal number.
+
+Type the following command in your terminal:
+
+```Solidity
+cast --to-base 0x0000000000000000000000000000000000000000000000000000000000000539 dec
+```
+
+And surprise, surprise, `1337` came back.
+
 ## Deploying a smart contract on testnet (Sepolia)
 
-# others
-<!-- 
-## Foundry
+Clearly, we need an actual testnet for a real network. But our trusty MetaMask has built-in Infura connections that are incompatible. Why? Because they're tailored specifically for MetaMask. Hence, we need our own Remote Procedure Call (RPC) URL.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+### Creating our Own RPC URL for a Testnet
 
-Foundry consists of:
+_To create one, we could run our own blockchain node, but let's be honest — many folks prefer avoiding that route. Instead, we utilize Node as a Service (NaaS) applications to expedite the process._
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+One promising option is using Alchemy - a free NaaS platform that we can send the transactions to. This procedure resides within the _Deploying to Testnet or Mainnnet_ section in the full course repo of the Foundry. and creating a new app.
 
-## Documentation
+### Altering our Private Key
 
-https://book.getfoundry.sh/
+we should use one of our MetaMask private keys.
 
-## Usage
+### Executing the Transaction
 
-### Build
+With our Sepolia RPC URL and private key from MetaMask, executing a transaction now becomes tremendously easier.
 
-```shell
-$ forge build
+```bash
+source .env
+forge script script/deploySimpleStorage.s.sol --rpc-url=$Sepolia_RPC_URL --private-key=$PRIVATE_KEY --broadcast
 ```
 
-### Test
+This command deploys our contract to the testnet, and we can monitor the transaction on our Alchemy dashboard.
 
-```shell
-$ forge test
+We soon find that our contract, Simple Storage, has been deployed on the Sepolia chain. We can grab our transaction hash and input it into Sepolia etherscan IO to confirm the successful transaction.
+
+After we refresh our Alchemy dashboard, we'll verify the requests sent and track the ETH send raw transaction that transmitted our transaction to the blockchain.
+
+## Formatting
+
+Forge has a built-in format command that will automatically format all our Solidity files according to Forge's default style.
+
+```bash
+forge fmt
 ```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-``` -->
